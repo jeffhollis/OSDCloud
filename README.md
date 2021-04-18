@@ -4,5 +4,5 @@ This script will take you through the build operation of OSDCloud from scratch t
 ## v0.3
 Change desription, thanks @T1mnl
 
-# comming
+# Coming
 More refined way of getting the JSON from Autopilot.
