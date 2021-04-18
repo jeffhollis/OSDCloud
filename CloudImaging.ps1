@@ -23,7 +23,7 @@ Install-Module -Name OSD -force
 Import-Module OSD
 
 #Other than making sure you have the latest OSD PowerShell Module installed, this should be the first function you start with.  This will create a more refined copy of ADK's WinPE and save it in $env:ProgramData\OSDCloud.
-New-OSDCloud.template -Language da-dk -SetAllIntl da-dk -SetInputLocale da-dk -verbose
+New-OSDCloud.template -Language en-us -SetInputLocale en-us -verbose
 <#
     ### You can add additional Languages to the OSDCloud.template easily by adding this parameter and specifying one or more Languages.  en-us is added by default
     New-OSDCloud.Template -Language de-de,es-es,fr-fr
@@ -44,7 +44,7 @@ New-OSDCloud.workspace -workspacepath $MyWorkspace
 #Get Autopilot profile and download it to the OSDCloud library
 $creds = Get-Credential
 Connect-MSGraph -Credential $creds
-Get-AutopilotProfile | Where-Object DisplayName -eq "Mindlab Production" | ConvertTo-AutopilotConfigurationJSON | Out-File -FilePath "$($MyWorkspace)\AutoPilot\Profiles\AutoPilotConfigurationFile.json" -Encoding ASCII
+Get-AutopilotProfile | Where-Object DisplayName -eq "ENG_Loaner" | ConvertTo-AutopilotConfigurationJSON | Out-File -FilePath "$($MyWorkspace)\AutoPilot\Profiles\AutoPilotConfigurationFile.json" -Encoding ASCII
 
 #Any time you need to make changes to WinPE in your current OSDCloud.workspace, you need to use this function.  Admin rights are required for this to work properly since you will be mounting a WIM
 Edit-OSDCloud.winpe -workspacepath $MyWorkspace
